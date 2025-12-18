@@ -1,0 +1,109 @@
+baseURL: "https://chika.vin/"
+title: Chika's Blog
+paginate: 10
+theme: PaperMod
+languageCode: zh-cn
+defaultContentLanguage: zh
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: Chika's Blog
+  description: "Love for Datastructures"
+  keywords: [OI, Someflower, Other]
+  author: Chika
+  
+  
+  DateFormat: "2006-01-02"
+  defaultTheme: auto # dark, light, auto
+  disableThemeToggle: false
+  
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+
+  # 首页信息
+  homeInfoParams:
+    Title: "KomariChika"
+    Content: "There is the solitude that threatens to drown, and the tenderness that flows like water."
+
+  # 社交链接（根据需要修改）
+  socialIcons:
+    - name: github
+      url: "https://github.com/yourusername"
+    - name: email
+      url: "xdefan101@gmail.com"
+    - name: x
+      url: "https://x.com/Theshine891403"
+  
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  # 代码高亮
+  assets:
+    disableHLJS: true
+
+  # 封面图设置
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
+
+# 菜单配置
+menu:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: 10
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 20
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 30
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 40
+    - identifier: categories
+      name: 分类
+      url: /categories/
+      weight: 50
+
+# 代码高亮配置
+markup:
+  highlight:
+    noClasses: true
+    lineNos: true
+    lineNumbersInTable: true
+    style: monokai
+  goldmark:
+    renderer:
+      unsafe: true
