@@ -1,11 +1,9 @@
 ---
-title: "关于我"
+title: "About me"
 date: 2024-12-18
 draft: false
+images:
+  - "/images/a.png"
 ---
 
-## 你好！
-
-欢迎来到我的个人博客。
-
-这里是我记录学习和生活的地方。
+一名来自xi'an 的oier,为什么叫KomariChika,因为很喜欢这个人物
