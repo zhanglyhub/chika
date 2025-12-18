@@ -1,6 +1,7 @@
 baseURL: "https://chika.vin/"
 title: Chika's Blog
-paginate: 10
+pagination:
+  paginate: 10
 theme: PaperMod
 languageCode: zh-cn
 defaultContentLanguage: zh
