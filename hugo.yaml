@@ -1,10 +1,8 @@
 baseURL: "https://chika.vin/"
-title: Chika's Blog
+title: chika's blog
 pagination:
-  paginate: 10
+  paginate: 5
 theme: PaperMod
-languageCode: zh-cn
-defaultContentLanguage: zh
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -15,47 +13,83 @@ minify:
   disableXML: true
   minifyOutput: true
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
 params:
   env: production
-  title: Chika's Blog
-  description: "Love for Datastructures"
-  keywords: [OI, Someflower, Other]
-  author: Chika
-  
-  
-  DateFormat: "2006-01-02"
-  defaultTheme: auto # dark, light, auto
+  title: KomariChika
+  description: "There is the solitude that threatens to drown, and the tenderness that flows like water."
+  keywords: [OI, ACG]
+  author: KomariChika
+
+  images:
+    - "/images/a.png"
+
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto
   disableThemeToggle: false
-  
+
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
+  ShowCodeCopyButtons: false
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
+  disableSpecial1stPost: false
   disableScrollToTop: false
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: true
+  showtoc: false
   tocopen: false
 
-  # 首页信息
+  assets:
+    favicon: "/icons/favicon.ico"
+    favicon16x16: "/icons/favicon-16x16.png"
+    favicon32x32: "/icons/favicon-32x32.png"
+    apple_touch_icon: "/icons/apple-touch-icon.png"
+    safari_pinned_tab: "/icons/safari-pinned-tab.svg"
+
+
+  label:
+    text: "Home"
+    icon: /apple-touch-icon.png
+    iconHeight: 35
+
+  profileMode:
+    enabled: true
+    title: KomariChika
+    subtitle: "There is the solitude that threatens to drown, and the tenderness that flows like water."
+
+    imageUrl: "/images/a.png"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+
+  # home-info mode
   homeInfoParams:
     Title: "KomariChika"
     Content: "There is the solitude that threatens to drown, and the tenderness that flows like water."
 
-  # 社交链接（根据需要修改）
   socialIcons:
-    - name: github
-      url: "https://github.com/yourusername"
-    - name: email
-      url: "xdefan101@gmail.com"
     - name: x
       url: "https://x.com/Theshine891403"
-  
+    - name: github
+      url: "https://github.com/zhanglyhub"
+
   analytics:
     google:
       SiteVerificationTag: "XYZabc"
@@ -64,47 +98,48 @@ params:
     yandex:
       SiteVerificationTag: "XYZabc"
 
-  # 代码高亮
-  assets:
-    disableHLJS: true
-
-  # 封面图设置
   cover:
-    hidden: false
-    hiddenInList: false
-    hiddenInSingle: false
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
 
-# 菜单配置
+  editPost:
+    URL: "https://github.com/<path_to_repo>/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: home
-      name: 首页
-      url: /
-      weight: 10
-    - identifier: posts
-      name: 文章
-      url: /posts/
-      weight: 20
-    - identifier: archives
-      name: 归档
-      url: /archives/
-      weight: 30
-    - identifier: tags
-      name: 标签
-      url: /tags/
-      weight: 40
     - identifier: categories
-      name: 分类
+      name: ~/categories
       url: /categories/
-      weight: 50
-
-# 代码高亮配置
+      weight: 10
+    - identifier: tags
+      name: ~/tags
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: ~/find
+      url: /search/
+      weight: 5
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
 markup:
   highlight:
-    noClasses: true
-    lineNos: true
-    lineNumbersInTable: true
-    style: monokai
-  goldmark:
-    renderer:
-      unsafe: true
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
