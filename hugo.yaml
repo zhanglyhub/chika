@@ -20,6 +20,7 @@ outputs:
     - JSON
 
 params:
+  math: true
   env: production
   title: KomariChika
   description: "There is the solitude that threatens to drown, and the tenderness that flows like water."

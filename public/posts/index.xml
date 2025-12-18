@@ -11,30 +11,22 @@
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Dec 2024 15:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Dec 2025 15:30:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello World - 我的第一篇博客</title>
+      <title>KomariChika suki Data Structures</title>
       <link>http://localhost:1313/posts/hello-world/</link>
-      <pubDate>Wed, 18 Dec 2024 15:30:00 +0800</pubDate>
+      <pubDate>Thu, 18 Dec 2025 15:30:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>&lt;h2 id=&#34;欢迎来到我的博客&#34;&gt;欢迎来到我的博客&lt;/h2&gt;
-&lt;p&gt;这是我使用 Hugo 搭建的个人博客的第一篇文章！&lt;/p&gt;
-&lt;h3 id=&#34;关于这个博客&#34;&gt;关于这个博客&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;使用 Hugo 静态网站生成器&lt;/li&gt;
-&lt;li&gt;部署在 GitHub Pages&lt;/li&gt;
-&lt;li&gt;使用 Cloudflare CDN 加速&lt;/li&gt;
-&lt;li&gt;域名：chika.vin&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;接下来&#34;&gt;接下来&lt;/h3&gt;
-&lt;p&gt;我会在这里分享：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;技术学习笔记&lt;/li&gt;
-&lt;li&gt;生活感悟&lt;/li&gt;
-&lt;li&gt;个人项目&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;敬请期待！🚀&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img alt=&#34;test&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/c.jpg&#34;&gt;
+Suffix Automaton&lt;a href=&#34;https://atcoder.jp/contests/abc433/tasks/abc433_g&#34;&gt;G - Substring Game&lt;/a&gt;AC自动机&lt;a href=&#34;https://www.luogu.com.cn/problem/P2292&#34;&gt;P2292&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A new way to maintain interval by bitset&lt;/p&gt;
+&lt;p&gt;1.it maybe unless&amp;hellip;when range is small,we can use square root decomposition on with bitset.For all query in $l,r$ ,maintain a answer bitset.if they are in the same block,use brute force ,else preform an $or$ operation on the block and answer.&lt;/p&gt;
+&lt;p&gt;2.可持久化并查集，大概&amp;hellip;&amp;hellip;考虑为每个格子维护建节点，维护5个指针指向上下左右上一次更新的数值，维护集合$S(v)$表示以$v$为原点最大拓展的区域，将值$v$相同合并，显然答案就是集合数量，对于一次更新，新建一个节点，继承之前上下左右指针指向的信息$O(1)$，之后查新节点的上下左右是否合法如果他大就把他标为不合法，如果他的邻居大就把他的邻居标为不合法，如果相等就合并$O((nm+q)*\alpha(nm+q))$.&lt;/p&gt;
+&lt;p&gt;3.单点修改区间修改区间子序列异或最大值查询。令$b_i=a_i\oplus a_{i-1}$，线段树维护$b$序列的线性基，对于区间修改相当于$b_l,b_{r+1}$两次单点修改，考虑区间查询，显然$\max\oplus_{i=l}^{r}a_i=\max a_l\oplus b[l+1&amp;hellip;r]$，再将$a_l$插入即可，复杂度$O((n+q\log n)\cdot m^2)$&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P11731&#34;&gt;P11731&lt;/a&gt; &lt;a href=&#34;https://www.luogu.com.cn/problem/P11620&#34;&gt;P11620&lt;/a&gt;，其实如果不带修可以考虑分治处理$[l&amp;hellip;mid]$的后缀线性基，处理$[mid+1&amp;hellip;r]$的前缀线性基&lt;/p&gt;
+&lt;p&gt;upd1:考虑令$b_i=a_i\oplus a_{i-1}$，则有$a_{l+1}=a_l\oplus b_{l+1}\to \text{span}{a_l,a_{l+1}}=\text{span}{a_l,a_l\oplus b_{l+1}}\to\text{span}{a_l,b_{l+1}}$ &lt;/p&gt;
+&lt;p&gt;所以对于区修改为点修，查询$\max\oplus_{i=l}^{r}a_i=a_l\cup b_{l+1&amp;hellip;r}$，线段树维护差分值，树状数组维护前缀，复杂度$O(\log n\log^2V)$.感觉悬啊，小优化：满秩的时候不用插入直接返回.(不过好像没啥用还跑的更慢了).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
